@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TicTac Toe</string>
+    <string name="UserIcon">Select your Icon</string>
+    <string name="startButton">Start</string>
+</resources>

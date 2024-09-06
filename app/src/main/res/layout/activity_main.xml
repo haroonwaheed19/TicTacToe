@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:backgroundTint="@color/layout_background"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="161dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/red"
+        android:text="Clear"
+        android:textColor="@android:color/white"
+        android:textColorLink="@color/red"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71000004" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUserChoice"
+        android:layout_width="310dp"
+        android:layout_height="180dp"
+        android:layout_margin="8dp"
+        android:background="@color/card_background"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp"
+        app:cardMaxElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/card_background">
+
+            <RadioGroup
+                android:id="@+id/rdgChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.11"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.814">
+
+                <RadioButton
+                    android:id="@+id/rbtnX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/rdbO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="O"
+                    android:textAllCaps="true"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:paddingLeft="20dp"
+                android:text="@string/UserIcon"
+                android:textColor="@color/text_Hint"
+                android:textSize="24sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.153"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.17000002" />
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="150dp"
+                android:layout_height="69dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/start_Button"
+                android:elevation="15dp"
+                android:text="@string/startButton"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.864" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/card_background"
+        android:visibility="invisible"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp"
+        app:cardMaxElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <GridLayout
+            android:id="@+id/tttGL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/card_background"
+            android:columnCount="3"
+            android:padding="25dp">
+
+            <Button
+                android:id="@+id/btn1"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn3"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn4"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn5"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn6"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn7"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn8"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn9"
+                android:onClick="initializeGame"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="2"
+                android:layout_column="2"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/button_color"
+                android:textSize="24sp" />
+
+        </GridLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
