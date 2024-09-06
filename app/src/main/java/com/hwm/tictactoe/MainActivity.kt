@@ -102,6 +102,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var  b1: String
@@ -199,13 +202,21 @@ class MainActivity : AppCompatActivity() {
             {
                 Toast.makeText(this, "$currentPlayer wins!", Toast.LENGTH_LONG).show()
                 disableGrid()
-                Toast.makeText(this, "Press Clear Button to Restart Game", Toast.LENGTH_LONG).show()
+//                Toast.makeText(this, "Press Clear Button to Restart Game", Toast.LENGTH_LONG).show()
+                lifecycleScope.launch {
+                    delay(4000)
+                    resetGame()
+                }
             }
             //Game is Drawn
             else if(cnt==9)
             {
                 disableGrid()
                 Toast.makeText(this, "Game is Drawn", Toast.LENGTH_LONG).show()
+                lifecycleScope.launch {
+                    delay(4000)
+                    resetGame()
+                }
             }
             else
             {
